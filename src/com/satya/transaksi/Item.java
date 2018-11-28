@@ -10,5 +10,11 @@ package com.satya.transaksi;
  * @author satya
  */
 public class Item {
+    //variable menyimpan nama barang
+    private String nama;
+    //variable menyimpan harga barang
+    private float harga;
+    //variable menyimpan jumlah barang
+    private int jumlah;
     
 }
