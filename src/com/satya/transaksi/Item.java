@@ -55,7 +55,15 @@ public class Item {
     public int getJumlah() {
         return jumlah;
     }
-   
+   //hasil perkalian harga dan jumlah
+    public float getTotal(){
+        return this.harga * this.jumlah;
+    }
+    //toString
+    public String toString(){
+        return this.nama;
+    }
+    
     
     
 }
