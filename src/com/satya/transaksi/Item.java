@@ -17,4 +17,15 @@ public class Item {
     //variable menyimpan jumlah barang
     private int jumlah;
     
+    //Konstruktor
+
+    public Item() {
+    }
+
+    public Item(String nama, float harga, int jumlah) {
+        this.nama = nama;
+        this.harga = harga;
+        this.jumlah = jumlah;
+    }
+    
 }
