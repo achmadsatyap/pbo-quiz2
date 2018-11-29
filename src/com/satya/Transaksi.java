@@ -47,12 +47,22 @@ public class Transaksi extends javax.swing.JFrame {
     private  void decId(){
         this.id -= 1;
     }
-//    //addItem Object
-//    private  Object[] addItem(String nama, int jumlah){
-//        float harga = 0;
-//        ComboModel items = new ComboMode():
-//        
-//    }
+ //addItem Object
+    private  Object[] addItem(String nama, int jumlah){
+        float harga = 0;
+        ComboModel items = new ComboModel();
+        for(int i = 0 ; i < items.getHargaBarang().size(); i++){
+            if(nama.equalsIgnoreCase(items.getJenisNama().get(i))){
+            harga = items.getHargaBarang().get(i);
+            }
+        }
+        Object[] obj = {
+            nama,
+            harga,
+            jumlah
+        };
+        return obj;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
