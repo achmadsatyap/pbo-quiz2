@@ -53,7 +53,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="ComboBox" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <Component id="itemCombo" min="-2" pref="170" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="itemsText" min="-2" pref="88" max="-2" attributes="0"/>
                                   </Group>
@@ -92,7 +92,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="itemCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="itemsText" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -129,7 +129,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="codeText">
     </Component>
-    <Component class="javax.swing.JComboBox" name="ComboBox">
+    <Component class="javax.swing.JComboBox" name="itemCombo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">

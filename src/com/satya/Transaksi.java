@@ -101,11 +101,36 @@ public class Transaksi extends javax.swing.JFrame {
         }
         return result;
     }
+    //disable tombol remove dan save jiak isi table kosong
+    private void belanja(){
+        if(isEmpty()){
+            this.saveButton.setEnabled(false);
+            this.removeButton.setEnabled(false);
+        }else{
+            this.saveButton.setEnabled(true);
+            this.removeButton.setEnabled(true);
+        }
+    }
     
     // ngecek jika isi tabel kosong
     private boolean isEmpty(){
         return this.transaksiTable.getModel().getRowCount() <= 0;
     }
+    // melakukan transaksi baru jika sudah transaksi sebelumnya
+    private  void newTransaksi(){
+        this.itemsText.setText("");
+        this.codeText.setText("");
+        this.newButton.setEnabled(true);
+        this.saveButton.setEnabled(false);
+        this.cancelButton.setEnabled(false);
+        this.addButton.setEnabled(false);
+        this.removeButton.setEnabled(false);
+        this.itemCombo.setEnabled(false);
+        this.tbModel.setRowCount(0);
+        this.belanja.clear();
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -114,7 +139,7 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         codeText = new javax.swing.JTextField();
-        ComboBox = new javax.swing.JComboBox<>();
+        itemCombo = new javax.swing.JComboBox<>();
         itemsText = new javax.swing.JTextField();
         newButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
@@ -141,8 +166,8 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel2.setText("Items");
 
-        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Susu", "Gula", "Kopi" }));
-        ComboBox.setSelectedIndex(-1);
+        itemCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Susu", "Gula", "Kopi" }));
+        itemCombo.setSelectedIndex(-1);
 
         itemsText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +219,7 @@ public class Transaksi extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(itemCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(itemsText, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(codeText)))
@@ -222,7 +247,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(itemCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itemsText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -287,10 +312,10 @@ public class Transaksi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBox;
     private javax.swing.JButton addButton;
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextField codeText;
+    private javax.swing.JComboBox<String> itemCombo;
     private javax.swing.JTextField itemsText;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
