@@ -27,4 +27,25 @@ public class Transaksi {
         this.items = items;
     }
     
+    //total setter
+    public void setTotal(){
+        float total = 0;
+        for(Item item : this.items){
+            total += item.getTotal();
+        }
+        this.total = total;
+    }
+    //output transaksi
+    public String pembayaran(){
+        setTotal();
+        String obt = "";
+        obt += "Kode\t\t : " + this.kode + "\n";
+        obt += "Daftar Belanja : \n ";
+        for (Item item : this.items){
+            obt += "\t" + item.getNama()  + "(X" + item.getJumlah() + ") : " +item.getTotal() + "\n" ;   
+        }
+        obt += "Total\t\t : " + this.total;
+        return obt;
+    }
+    
 }
