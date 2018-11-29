@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import com.satya.transaksi.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /*
@@ -63,6 +64,45 @@ public class Transaksi extends javax.swing.JFrame {
         };
         return obj;
     }
+    
+    //set fungsi code
+    private String setCode(){
+        this.incId();
+        // tanggal
+        String sk = new SimpleDateFormat("yyMMdd").format(new Date());
+        this.code = String.format(sk + "%02d", this.id);
+        return code;
+    }
+    
+    // update fungsi jumlah
+    private  void updateJumlah(String nama, int add){
+        ArrayList<String> item = new ArrayList<>();
+        for(int i = 0; i < tbModel.getRowCount(); i++){
+            item.add(tbModel.getValueAt(i, 0).toString());
+        }
+        for(int i = 0; i < item.size(); i++){
+            if(item.get(i).equals(nama)){
+                int jumlah = new Integer (tbModel.getValueAt(i, 2).toString());
+                tbModel.setValueAt(jumlah + add, i, 2);
+            }
+        }
+    }
+    // ngecek item double yang terpilih pada item sebelumnya
+    private  boolean Duplicate(String nama){
+        boolean result = false;
+        ArrayList<String> item = new ArrayList<>();
+        for(int i = 0; i < tbModel.getRowCount(); i++){
+            item.add(tbModel.getValueAt(i, 0).toString());
+        }
+        for(String i : item){
+            if(i.equals(nama)){
+                result = true;
+            }
+        }
+        return result;
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
