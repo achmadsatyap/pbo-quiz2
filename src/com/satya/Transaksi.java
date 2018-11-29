@@ -31,7 +31,14 @@ public class Transaksi extends javax.swing.JFrame {
     public Transaksi() {
         initComponents();
     }
-
+    //penambahan id
+    private  void incId(){
+        this.id += 1;
+    }
+    //pengurangan id
+    private  void decId(){
+        this.id -= 1;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -69,6 +76,13 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel2.setText("Items");
 
         ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Susu", "Gula", "Kopi" }));
+        ComboBox.setSelectedIndex(-1);
+
+        itemsText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemsTextActionPerformed(evt);
+            }
+        });
 
         newButton.setText("New");
 
@@ -165,6 +179,10 @@ public class Transaksi extends javax.swing.JFrame {
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void itemsTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemsTextActionPerformed
 
     /**
      * @param args the command line arguments
