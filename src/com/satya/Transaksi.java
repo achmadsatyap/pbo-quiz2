@@ -102,7 +102,10 @@ public class Transaksi extends javax.swing.JFrame {
         return result;
     }
     
-    
+    // ngecek jika isi tabel kosong
+    private boolean isEmpty(){
+        return this.transaksiTable.getModel().getRowCount() <= 0;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
