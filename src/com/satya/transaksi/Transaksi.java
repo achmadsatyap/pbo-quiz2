@@ -23,6 +23,11 @@ public class Transaksi {
     
     //konstruktor
 
+    public Transaksi() {
+        this.kode = null;
+    }
+    
+
     public Transaksi(String kode, ArrayList<Item> items) {
         this.kode = kode;
         this.items = items;
