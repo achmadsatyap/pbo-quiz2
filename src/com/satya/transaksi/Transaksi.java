@@ -48,7 +48,7 @@ public class Transaksi {
         obt += "Kode\t\t : " + this.kode + "\n";
         obt += "Daftar Belanja : \n ";
         for (Item item : this.items){
-            obt += "\t" + item.getNama()  + "(X" + item.getJumlah() + ") : " +item.getTotal() + "\n" ;   
+            obt += "\t" + item.getNama()  + "(" + item.getJumlah() + ") : " +item.getTotal() + "\n" ;   
         }
         obt += "Total\t\t : " + this.total;
         return obt;
