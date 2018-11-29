@@ -4,6 +4,8 @@ import com.satya.transaksi.Item;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
+import com.satya.transaksi.*;
+import java.util.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,8 +29,14 @@ public class Transaksi extends javax.swing.JFrame {
     private  DefaultComboBoxModel cbModel;
     //variable pembelanjaan transaksi item
     private ArrayList<Item> belanja = new ArrayList<>();
-   
+    
+    //konstruktor
     public Transaksi() {
+        ComboModel comboModel = new ComboModel();
+        this.cbModel = new DefaultComboBoxModel<>(comboModel.getJenisNama().toArray());
+        
+        TableTransaksi tabelModel = new TableTransaksi();
+        this.tbModel = new DefaultTableModel(tabelModel.getKolomNama(), 0); // tabel kolom nama
         initComponents();
     }
     //penambahan id
@@ -39,7 +47,12 @@ public class Transaksi extends javax.swing.JFrame {
     private  void decId(){
         this.id -= 1;
     }
-    
+//    //addItem Object
+//    private  Object[] addItem(String nama, int jumlah){
+//        float harga = 0;
+//        ComboModel items = new ComboMode():
+//        
+//    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
