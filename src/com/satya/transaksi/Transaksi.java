@@ -11,6 +11,20 @@ package com.satya.transaksi;
  * @author satya
  */
 import java.util.*;
+import java.util.ArrayList;
 public class Transaksi {
+    //variable untuk menampilkan kode pembayaran 
+    private final String kode;
+    //item untuk menampilkan item apa saja yang dibeli
+    private  ArrayList<Item> items = new ArrayList();
+    //variable menampilkan total pembelian
+    private float total;
+    
+    //konstruktor
 
+    public Transaksi(String kode, ArrayList<Item> items) {
+        this.kode = kode;
+        this.items = items;
+    }
+    
 }
