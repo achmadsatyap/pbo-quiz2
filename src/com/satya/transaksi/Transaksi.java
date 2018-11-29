@@ -10,6 +10,7 @@ package com.satya.transaksi;
  *
  * @author satya
  */
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.ArrayList;
 public class Transaksi {
@@ -36,7 +37,7 @@ public class Transaksi {
         this.total = total;
     }
     //output transaksi
-    public String pembayaran(){
+    public String Pembayaran(){
         setTotal();
         String obt = "";
         obt += "Kode\t\t : " + this.kode + "\n";
