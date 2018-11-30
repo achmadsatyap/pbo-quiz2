@@ -175,7 +175,6 @@ public class TransaksiFrame extends javax.swing.JFrame {
         codeText.setEnabled(false);
 
         itemCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Susu", "Gula", "Kopi" }));
-        itemCombo.setSelectedIndex(-1);
         itemCombo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         itemCombo.setEnabled(false);
 
@@ -336,6 +335,9 @@ public class TransaksiFrame extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         String nama = this.itemCombo.getSelectedItem().toString();
         int jumlah = new Integer(this.itemsText.getText());
+      
+            
+        
         if(Duplicate(nama)){
             updateJumlah(nama, jumlah);
         }else{
