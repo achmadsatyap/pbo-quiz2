@@ -335,14 +335,20 @@ public class TransaksiFrame extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         String nama = this.itemCombo.getSelectedItem().toString();
         int jumlah = new Integer(this.itemsText.getText());
-      
-            
-        
-        if(Duplicate(nama)){
+           
+       
+                 if(Duplicate(nama)){
+                      
             updateJumlah(nama, jumlah);
         }else{
             tbModel.addRow(addItem(nama, jumlah));
+         
+       
         }
+     
+             
+        
+       
         this.belanja();
     }//GEN-LAST:event_addButtonActionPerformed
 
